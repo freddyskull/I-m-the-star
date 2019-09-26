@@ -12,4 +12,12 @@ export class UiThemeComponent implements OnInit {
   ngOnInit() {
   }
 
+  navbarColor(Class:string){
+    localStorage.setItem('navbar-data-color', Class);
+  }
+
+  hederColor(Class:string){
+    localStorage.setItem('header-color-data',Class);
+  }
+
 }

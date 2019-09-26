@@ -1,8 +1,8 @@
-<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+<div class="app-container  body-tabs-shadow fixed-sidebar fixed-header">
     <app-header></app-header>
     <app-ui-theme></app-ui-theme>
     <div class="app-main">
-        <div class="app-sidebar sidebar-shadow">
+        <div class="app-sidebar sidebar-shadow" [ngClass]="navbarClass">
             <div class="app-header__logo">
                 <div class="logo-src"></div>
                 <div class="header__pane ml-auto">
@@ -42,10 +42,9 @@
                 <div class="app-page-title">
                     <div class="page-title-wrapper">
                         <div class="page-title-heading">
-                            <div class="page-title-icon">
-                                <i class="pe-7s-car icon-gradient bg-mean-fruit">
-                                </i>
-                            </div>
+                           <div class="mr-2">
+                               <img src="./assets/img/app.png" width="100" alt="logo-im-the-famose">
+                           </div>
                             <div>Analíticas Dashboard
                                 <div class="page-title-subheading">Aquí se encuentra las estadísticas de la página,
                                     herramientas y consejos necesarios para que tu página sea famosa rapidamente.

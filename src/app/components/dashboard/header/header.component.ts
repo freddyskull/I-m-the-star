@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   constructor() { }
-
+  headerColorData:string = '';
   ngOnInit() {
+    this.headerColorData = localStorage.getItem('header-color-data');
   }
 
 }

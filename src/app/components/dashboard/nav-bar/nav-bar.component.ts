@@ -17,7 +17,7 @@ export class NavBarComponent implements OnInit {
     {
       header:'Crear proyectos',
       name: 'Facebook',
-      icon: 'fab fa-facebook-f',
+      icon: 'metismenu-icon fab fa-facebook-f',
       subElement: true,
       link1: {
         icon:'fas fa-flag',
@@ -39,7 +39,7 @@ export class NavBarComponent implements OnInit {
       header:'Acumula puntos',
       name: 'Ganar monedas',
       dir: '/inicio',
-      icon: 'fas fa-coins',
+      icon: 'metismenu-icon fas fa-coins',
       subElement: true,
       link1: {
         icon:'fas fa-flag',
