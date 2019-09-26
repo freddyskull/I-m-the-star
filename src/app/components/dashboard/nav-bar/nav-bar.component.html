@@ -1,0 +1,44 @@
+<div class="scrollbar-sidebar">
+    <div class="app-sidebar__inner">
+        <ul class="vertical-nav-menu" *ngFor="let item of nav">
+            <li *ngIf="item.header != undefined" class="app-sidebar__heading">{{item.header}}</li>
+            <ng-container *ngIf="!item.subElement; else elseTemplate">
+                <li>
+                    <a [routerLink]="[ item.dir ]" routerLinkActive="mm-active">
+                        <i [class]="item.icon"></i>
+                        {{item.name}}
+                    </a>
+                </li>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i [class]="item.icon"></i>
+                        {{item.name}}
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a [routerLink]="[ item.link1.dir ]">
+                                <i [class]="item.link1.icon"></i>
+                                {{item.link1.name}}
+                            </a>
+                        </li>
+                        <li *ngIf="item.link2 != undefined">
+                            <a [routerLink]="[ item.link2.dir ]">
+                                <i [class]="item.link2.icon"></i>
+                                {{item.link2.name}}
+                            </a>
+                        </li>
+                        <li *ngIf="item.link3 != undefined">
+                            <a [routerLink]="[ item.link3.dir ]">
+                                <i [class]="item.link3.icon"></i>
+                                {{item.link3.name}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ng-template>
+        </ul>
+    </div>
+</div>
