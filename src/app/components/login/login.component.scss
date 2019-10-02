@@ -20,10 +20,8 @@
     src: url(../../../assets/fonts/montserrat/Montserrat-Medium.ttf); 
   }
   
-  @font-face {
-    font-family: Montserrat-SemiBold;
-    src: url(../../../assets/fonts/montserrat/Montserrat-SemiBold.ttf); 
-  }
+  
+
   
   /*//////////////////////////////////////////////////////////////////
   [ RESTYLE TAG ]*/
@@ -162,7 +160,7 @@
   .limiter {
     width: 100%;
     margin: 0 auto;
-    background-image: url(../../../assets/images/bg-01.jpg);
+   
     background-size: cover;
   }
   

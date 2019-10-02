@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent implements OnInit, OnChanges {
+ 
   nav: any = [
     {
       header:'Dasboard',
@@ -17,51 +18,26 @@ export class NavBarComponent implements OnInit {
     {
       header:'Crear proyectos',
       name: 'Facebook',
+      dir: '/facebook',
       icon: 'metismenu-icon fab fa-facebook-f',
-      subElement: true,
-      link1: {
-        icon:'fas fa-flag',
-        name: 'Fan pages likes',
-        dir: '/facebook-fan-page-agregar',
-      },
-      link2: {
-        icon:'fas fa-thumbs-up',
-        name: 'Reacciones',
-        dir: '/facebook-reacciones-agregar',
-      },
-      link3: {
-        icon:'fas fa-reply',
-        name: 'Comentarios',
-        dir: '/facebook-comentarios-agregar',
-      },
-    },
-    {
-      header:'Acumula puntos',
-      name: 'Ganar monedas',
-      dir: '/inicio',
-      icon: 'metismenu-icon fas fa-coins',
-      subElement: true,
-      link1: {
-        icon:'fas fa-flag',
-        name: 'Fan pages likes',
-        dir: '/paginas-fan-page',
-      },
-      link2: {
-        icon:'fas fa-thumbs-up',
-        name: 'Reacciones',
-        dir: '/paginas-reacciones',
-      },
-      link3: {
-        icon:'fas fa-reply',
-        name: 'Comentarios',
-        dir: '/paginas-comentarios',
-      },
     },
   ]
 
   constructor() { }
-
+  navbarClass:string = '';
+  @Input() navbarEvent;
   ngOnInit() {
+    this.navbarClass = localStorage.getItem('navbar-data-color');
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes.navbarEvent.currentValue != undefined){
+      this.navbarClass = changes.navbarEvent.currentValue;
+    }
+  }
+
+  headerEventColor(){
+    this.navbarClass = localStorage.getItem('navbar-data-color');
   }
 
 }

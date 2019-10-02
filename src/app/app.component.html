@@ -1,1 +1,26 @@
-<router-outlet></router-outlet>
+<ng-container *ngIf="login != null; else elseTemplate">
+    <div class="app-container body-tabs-shadow fixed-sidebar fixed-header" [ngClass]="{'closed-sidebar': sidebarEvent}">
+        <div class="app-main"> <!--poner estilo aqui si quieres hacer un fondo personalizable aqui si quiero -->
+            <span>
+                <app-header 
+                [headerEvent]="headerEvent"
+                (EventSidebar)="sidebarEvent = $event"
+                ></app-header>
+            </span>
+            <span>
+                <app-nav-bar [navbarEvent]="navbarEvent"></app-nav-bar>
+            </span>
+            <app-ui-theme 
+            (navbarChangeColor)="navbarEvent = $event"
+            (headerChangeColor)="headerEvent = $event"
+            ></app-ui-theme>
+            <div class="app-main__outer">
+                <router-outlet></router-outlet>
+                <app-footer  [navbarEvent]="navbarEvent" ></app-footer>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-template #elseTemplate>
+        <router-outlet></router-outlet>
+</ng-template>
